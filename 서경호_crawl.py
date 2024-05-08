@@ -102,9 +102,9 @@ def visit_url(selected_uri):
 def insert_data(data):
     try:
         connection = mysql.connector.connect(
-            host='192.168.0.35',
+            host='host_ip',
             user='guest1',
-            password='guest',
+            password='pwd',
             database='dark_web'
         )
         cursor = connection.cursor()
