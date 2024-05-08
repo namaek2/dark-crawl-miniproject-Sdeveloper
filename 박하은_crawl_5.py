@@ -74,10 +74,10 @@ def visit_url():
 def insert_data(data):
     try:
         connection = mysql.connector.connect(
-            host='192.168.0.35',
+            host='****',
             user='guest4',
-            password='guest',
-            database='dark_web'
+            password='***',
+            database='***'
         )
         cursor = connection.cursor()
 
