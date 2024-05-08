@@ -134,7 +134,43 @@ def visit_url():
                             print("Error parsing child content:", e)
                     else:
                         print("Failed to fetch child URL. Status Code:", response_child.status_code)
-      크"
+                        print("Response Headers:", response.headers)
+                        
+    return current_urls, urls_to_parse  # 현재 페이지의 URL과 파싱할 URL들 반환
+
+
+
+# 데이터 삽입 코드 및 테스트 코드
+
+def insert_data(data):
+    try:
+        connection = mysql.connector.connect(
+            host='****',
+            user='guest4',
+            password='***',
+            database='***'
+        )
+        cursor = connection.cursor()
+
+        # 삽입 쿼리
+        insert_query = "INSERT INTO web (url, price, product) VALUES (%s, %s, %s)"
+        cursor.execute(insert_query, data)
+        connection.commit()
+        
+        # 연결 및 커서 닫기
+        cursor.close()
+        connection.close()
+        
+        print("데이터 삽입 완료!")
+    except mysql.connector.Error as error:
+        print("Error while connecting to MySQL:", error)
+        return None
+    
+
+
+
+
+selected_uri = "다크웹 링크"    
 current_url=[]
 category_item_links,category_cal = category_visit(selected_uri)
 urls_to_parse = visit_url()
