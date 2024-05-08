@@ -74,10 +74,10 @@ def visit_onion(onion_url, now_depth):
 def insert_data(data):
     try:
         connection = mysql.connector.connect(
-            host='192.168.0.35',
+            host='***',
             user='guest5',
-            password='guest',
-            database='dark_web'
+            password='***',
+            database='***'
         )
         cursor = connection.cursor()
 
