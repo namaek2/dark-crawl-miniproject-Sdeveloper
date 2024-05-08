@@ -49,10 +49,10 @@ def insert_data(data):
     print("데이터 입력")
     try:
         connection = mysql.connector.connect(
-            host='192.168.0.35',
+            host='ip',
             user='guest3',
             password='pw',
-            database='dark_web'
+            database='db'
         )
         cursor = connection.cursor()
         insert_query = f"INSERT INTO web (url, price, product) VALUES (%s, %s, %s)"
