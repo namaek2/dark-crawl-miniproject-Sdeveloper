@@ -2,7 +2,6 @@ import pandas as pd
 from matplotlib import pyplot as plt
 from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
 
